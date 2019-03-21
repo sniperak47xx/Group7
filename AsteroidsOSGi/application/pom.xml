@@ -55,6 +55,32 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>OSGiExtender</artifactId>
             <version>${project.version}</version>
+<!--            <exclusions>
+                <exclusion>
+                    <groupId>dk.sdu.mmmi.cbse</groupId>
+                   <artifactId>OSGiAsteroidSplitter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dk.sdu.mmmi.cbse</groupId>
+                    <artifactId>OSGiAsteroids</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dk.sdu.mmmi.cbse</groupId>
+                    <artifactId>OSGiLaser</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dk.sdu.mmmi.cbse</groupId>
+                    <artifactId>OSGiCommonBullet</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dk.sdu.mmmi.cbse</groupId>
+                    <artifactId>OSGiCommonEnemy</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dk.sdu.mmmi.cbse</groupId>
+                    <artifactId>OSGiEnemy</artifactId>
+                </exclusion>
+            </exclusions>-->
         </dependency>
     </dependencies>
 

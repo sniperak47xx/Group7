@@ -67,15 +67,15 @@ public class Game implements ApplicationListener {
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
 
-        update();
+//        update();
         draw();
     }
 
     private void update() {
         // Update
-        for (IEntityProcessingService entityProcessorService : entityProcessorList) {
-            entityProcessorService.process(gameData, world);
-        }
+//        for (IEntityProcessingService entityProcessorService : entityProcessorList) {
+//            entityProcessorService.process(gameData, world);
+//        }
 
         // Post Update
         for (IPostEntityProcessingService postEntityProcessorService : postEntityProcessorList) {

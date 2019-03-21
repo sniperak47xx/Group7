@@ -70,11 +70,9 @@
         <module>application</module>
         <module>branding</module>
         <module>OSGiExtender</module>
-        <module>OSGiEnemy</module>
         <module>OSGiLibGDX</module>
         <module>OSGiCore</module>
         <module>OSGiCommon</module>
-        <module>OSGiCommonEnemy</module>
         <module>OSGiUpdater</module>
     </modules>
 
