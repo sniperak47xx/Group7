@@ -70,17 +70,12 @@
         <module>application</module>
         <module>branding</module>
         <module>OSGiExtender</module>
-        <module>OSGiAsteroids</module>
-        <module>OSGiAsteroidSplitter</module>
         <module>OSGiEnemy</module>
         <module>OSGiLibGDX</module>
         <module>OSGiCore</module>
         <module>OSGiCommon</module>
-        <module>OSGiCommonAsteroids</module>
         <module>OSGiCommonEnemy</module>
-        <module>OSGiCommonBullet</module>
         <module>OSGiUpdater</module>
-        <module>OSGiLaser</module>
     </modules>
 
     <properties>
