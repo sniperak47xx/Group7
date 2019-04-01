@@ -15,7 +15,7 @@ import java.awt.Graphics2D;
  *
  * @author Borgar Bordoy
  */
-public class MapPlugin implements IGamePluginService {
+public class Activator implements IGamePluginService {
 
     @Override
     public void start(GameData gameData, World world) {

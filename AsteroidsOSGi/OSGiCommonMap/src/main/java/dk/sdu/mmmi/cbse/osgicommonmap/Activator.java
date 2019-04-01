@@ -13,7 +13,7 @@ import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
  *
  * @author Borgar Bordoy
  */
-public class Map implements IGamePluginService{
+public class Activator implements IGamePluginService{
 
     @Override
     public void start(GameData gameData, World world) {
