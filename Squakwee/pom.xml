@@ -79,6 +79,7 @@
         <module>OSGiEnemy</module>
     <module>OSGiCommonPlayer</module>
     <module>OSGiPlayer</module>
+    <module>OSGiWeapon</module>
   </modules>
 
     <properties>
