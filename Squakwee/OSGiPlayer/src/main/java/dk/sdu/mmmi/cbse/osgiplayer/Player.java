@@ -3,26 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dk.sdu.mmmi.cbse.osgimap;
+package dk.sdu.mmmi.cbse.osgiplayer;
 
+import dk.sdu.mmmi.cbse.common.data.GameData;
+import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
 
 /**
  *
- * @author Borgar Bordoy
+ * @author Martin Sorensen
  */
-public class Activator implements BundleActivator {
-
-    
-    @Override
-    public void start(BundleContext bc) throws Exception {
-        bc.registerService(IEntityProcessingService.class, new Map(), null);
-    }
+public class Player implements IEntityProcessingService{
 
     @Override
-    public void stop(BundleContext bc) throws Exception {
+    public void process(GameData gameData, World world) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }
