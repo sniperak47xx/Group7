@@ -7,3 +7,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+/AsteroidsOSGi/KristianJava/nbproject/private/
+/AsteroidsOSGi/KristianJava/build/
+/AsteroidsOSGi/KristianJava/dist/
+/AsteroidsOSGi/JavaLab/nbproject/private/
