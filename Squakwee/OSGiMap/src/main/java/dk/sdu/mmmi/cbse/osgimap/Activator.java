@@ -46,6 +46,7 @@ public class Activator implements IGamePluginService {
      */
     private int[][] data = new int[WIDTH][HEIGHT];
 
+    
     @Override
     public void start(GameData gameData, World world) {
         Entity map = createMap(gameData);
