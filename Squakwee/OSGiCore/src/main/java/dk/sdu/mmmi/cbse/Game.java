@@ -6,6 +6,9 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
@@ -25,6 +28,9 @@ public class Game implements ApplicationListener {
 
     private static OrthographicCamera cam;
     private ShapeRenderer sr;
+    private SpriteBatch batch;
+    private Texture texture;
+    private Sprite sprite, spriteMap;
     private final GameData gameData = new GameData();
     private static World world = new World();
     private static final List<IEntityProcessingService> entityProcessorList = new CopyOnWriteArrayList<>();
@@ -39,7 +45,7 @@ public class Game implements ApplicationListener {
     private void init() {
 
         LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
-        cfg.title = "Asteroids";
+        cfg.title = "Squakwee";
         cfg.width = 800;
         cfg.height = 600;
         cfg.useGL30 = false;
@@ -60,7 +66,6 @@ public class Game implements ApplicationListener {
         sr = new ShapeRenderer();
 
         Gdx.input.setInputProcessor(new GameInputProcessor(gameData));
-
     }
 
     @Override
@@ -72,7 +77,7 @@ public class Game implements ApplicationListener {
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
 
-//        update();
+        update();
         draw();
     }
 
@@ -85,6 +90,7 @@ public class Game implements ApplicationListener {
         // Post Update
         for (IPostEntityProcessingService postEntityProcessorService : postEntityProcessorList) {
             postEntityProcessorService.process(gameData, world);
+
         }
     }
 

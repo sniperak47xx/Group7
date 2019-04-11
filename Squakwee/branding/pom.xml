@@ -4,14 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
       <groupId>dk.sdu.mmmi.cbse</groupId>
-      <artifactId>AsteroidsOSGi-parent</artifactId>
+      <artifactId>Squakwee-parent</artifactId>
       <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>AsteroidsOSGi-branding</artifactId>
+  <artifactId>SquakweeOSGi-branding</artifactId>
   <packaging>nbm</packaging>
 
-  <name>AsteroidsOSGi-branding</name>
+  <name>SquakweeOSGi-branding</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
