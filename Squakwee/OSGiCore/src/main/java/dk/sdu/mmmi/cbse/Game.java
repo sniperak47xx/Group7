@@ -1,5 +1,6 @@
 package dk.sdu.mmmi.cbse;
 
+import dk.sdu.mmmi.cbse.osgimap.TileGameMap;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
@@ -51,7 +52,7 @@ public class Game implements ApplicationListener {
         cfg.useGL30 = false;
         cfg.resizable = false;
 
-        new LwjglApplication(this, cfg);
+        new LwjglApplication(new TileGameMap(), cfg);
     }
 
     @Override
@@ -69,6 +70,10 @@ public class Game implements ApplicationListener {
     }
 
     @Override
+    public void dispose() {
+    }
+
+    @Override
     public void render() {
         // clear screen to black
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -79,6 +84,10 @@ public class Game implements ApplicationListener {
 
         update();
         draw();
+    }
+
+    @Override
+    public void resize(int width, int height) {
     }
 
     private void update() {
@@ -115,19 +124,11 @@ public class Game implements ApplicationListener {
     }
 
     @Override
-    public void resize(int width, int height) {
-    }
-
-    @Override
     public void pause() {
     }
 
     @Override
     public void resume() {
-    }
-
-    @Override
-    public void dispose() {
     }
 
     public void addEntityProcessingService(IEntityProcessingService eps) {
