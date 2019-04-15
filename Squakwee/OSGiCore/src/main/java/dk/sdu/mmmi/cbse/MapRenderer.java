@@ -30,7 +30,7 @@ public class MapRenderer implements Screen {
     @Override
     public void show() {
         TmxMapLoader loader = new TmxMapLoader();
-        map = loader.load("C:\\Users\\borga\\Desktop\\GameMap\\desktop\\src\\assets\\TileMap.tmx");
+        map = loader.load("assets\\TileMap.tmx");
 
         renderer = new OrthogonalTiledMapRenderer(map);
 
