@@ -67,12 +67,12 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>OSGiMap</artifactId>
+            <artifactId>OSGiCommonMap</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>OSGiCommonMap</artifactId>
+            <artifactId>OSGiMap</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

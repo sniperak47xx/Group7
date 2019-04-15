@@ -43,8 +43,7 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
-                    <instructions>
-                    </instructions>
+                    <instructions></instructions>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,16 +1,20 @@
 package dk.sdu.mmmi.cbse;
 
-import dk.sdu.mmmi.cbse.osgimap.TileGameMap;
+//import dk.sdu.mmmi.cbse.osgimap.TileGameMap;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
@@ -38,6 +42,11 @@ public class Game implements ApplicationListener {
     private static final List<IGamePluginService> gamePluginList = new CopyOnWriteArrayList<>();
     private static List<IPostEntityProcessingService> postEntityProcessorList = new CopyOnWriteArrayList<>();
 
+    //LibGDX
+    private TiledMap map;
+    private OrthogonalTiledMapRenderer renderer;
+    private OrthographicCamera camera;
+
     public Game() {
         init();
         this.bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
@@ -55,6 +64,16 @@ public class Game implements ApplicationListener {
         new LwjglApplication(new TileGameMap(), cfg);
     }
 
+//    public void show() {
+//        TmxMapLoader loader = new TmxMapLoader();
+//        map = loader.load("C:\\Users\\borga\\Desktop\\GameMap\\desktop\\src\\assets\\TileMap.tmx");
+//
+//        renderer = new OrthogonalTiledMapRenderer(map);
+//
+//        camera = new OrthographicCamera();
+//
+//    }
+
     @Override
     public void create() {
         gameData.setDisplayWidth(Gdx.graphics.getWidth());
@@ -67,10 +86,18 @@ public class Game implements ApplicationListener {
         sr = new ShapeRenderer();
 
         Gdx.input.setInputProcessor(new GameInputProcessor(gameData));
+//        TmxMapLoader loader = new TmxMapLoader();
+//        map = loader.load("C:\\Users\\borga\\Desktop\\GameMap\\desktop\\src\\assets\\TileMap.tmx");
+//
+//        renderer = new OrthogonalTiledMapRenderer(map);
+//
+//        camera = new OrthographicCamera();
     }
 
     @Override
     public void dispose() {
+//        map.dispose();
+//        renderer.dispose();
     }
 
     @Override
@@ -84,10 +111,19 @@ public class Game implements ApplicationListener {
 
         update();
         draw();
+//        Gdx.gl.glClearColor(0, 0, 0, 1);
+//        Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
+//
+//        renderer.setView(camera);
+//        renderer.render();
+
     }
 
     @Override
     public void resize(int width, int height) {
+//        camera.viewportWidth = width;
+//        camera.viewportHeight = height;
+//        camera.update();
     }
 
     private void update() {

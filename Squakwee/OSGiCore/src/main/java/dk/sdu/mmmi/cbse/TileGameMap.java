@@ -1,5 +1,6 @@
-package dk.sdu.mmmi.cbse.osgimap;
+package dk.sdu.mmmi.cbse;
 
+import dk.sdu.mmmi.cbse.MapRenderer;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,7 +13,7 @@ public class TileGameMap extends Game {
     @Override
     public void create() {
 
-        setScreen(new Play());
+        setScreen(new MapRenderer());
     }
 
     @Override

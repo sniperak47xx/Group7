@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.osgimap;
+package dk.sdu.mmmi.cbse;
 
 
 /*
@@ -18,13 +18,13 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
  *
  * @author Borgar Bordoy
  */
-public class Play implements Screen {
+public class MapRenderer implements Screen {
 
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
     private OrthographicCamera camera;
 
-    public Play() {
+    public MapRenderer() {
     }
 
     @Override
