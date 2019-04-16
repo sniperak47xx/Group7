@@ -12,7 +12,6 @@ public class TileGameMap extends Game {
 
     @Override
     public void create() {
-
         setScreen(new MapRenderer());
     }
 

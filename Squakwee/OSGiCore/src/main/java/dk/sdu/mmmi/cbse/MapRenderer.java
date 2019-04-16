@@ -1,16 +1,18 @@
-package dk.sdu.mmmi.cbse;
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package dk.sdu.mmmi.cbse;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
@@ -24,17 +26,22 @@ public class MapRenderer implements Screen {
     private OrthogonalTiledMapRenderer renderer;
     private OrthographicCamera camera;
 
+    private Player player;
+
     public MapRenderer() {
     }
 
     @Override
     public void show() {
         TmxMapLoader loader = new TmxMapLoader();
-        map = loader.load("assets\\TileMap.tmx");
+        map = loader.load("C:\\Users\\borga\\Documents\\NetBeansProjects\\Group7\\Squakwee\\OSGiMap\\src\\main\\resources\\dk\\sdu\\mmmi\\cbse\\osgimap\\assets\\maps\\TileMap.tmx");
+//        map = loader.load("assets\\TileMap.tmx");
 
         renderer = new OrthogonalTiledMapRenderer(map);
 
         camera = new OrthographicCamera();
+        player = new Player(new Sprite(new Texture("C:\\Users\\borga\\Documents\\NetBeansProjects\\Group7\\Squakwee\\OSGiMap\\src\\main\\resources\\dk\\sdu\\mmmi\\cbse\\osgimap\\assets\\img\\player.png")), (TiledMapTileLayer) map.getLayers().get(0));
+        player.setPosition(5 * player.getCollisionLayer().getTileWidth(), 52 * player.getCollisionLayer().getTileHeight());
     }
 
     @Override
@@ -44,6 +51,10 @@ public class MapRenderer implements Screen {
 
         renderer.setView(camera);
         renderer.render();
+        renderer.getBatch().begin();
+        player.draw(renderer.getBatch());
+        player.setSize(25, 30);
+        renderer.getBatch().end();
 
     }
 
@@ -52,6 +63,7 @@ public class MapRenderer implements Screen {
         camera.viewportWidth = width;
         camera.viewportHeight = height;
         camera.update();
+
     }
 
     @Override
@@ -73,6 +85,7 @@ public class MapRenderer implements Screen {
     public void dispose() {
         map.dispose();
         renderer.dispose();
+        player.getTexture().dispose();
     }
 
 }

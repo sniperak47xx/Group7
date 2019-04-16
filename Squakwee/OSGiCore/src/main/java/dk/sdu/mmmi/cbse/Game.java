@@ -40,11 +40,6 @@ public class Game implements ApplicationListener {
     private static final List<IGamePluginService> gamePluginList = new CopyOnWriteArrayList<>();
     private static List<IPostEntityProcessingService> postEntityProcessorList = new CopyOnWriteArrayList<>();
 
-    //LibGDX
-    private TiledMap map;
-    private OrthogonalTiledMapRenderer renderer;
-    private OrthographicCamera camera;
-
     public Game() {
         init();
         this.bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
@@ -78,8 +73,6 @@ public class Game implements ApplicationListener {
 
     @Override
     public void dispose() {
-//        map.dispose();
-//        renderer.dispose();
     }
 
     @Override
@@ -98,9 +91,6 @@ public class Game implements ApplicationListener {
 
     @Override
     public void resize(int width, int height) {
-//        camera.viewportWidth = width;
-//        camera.viewportHeight = height;
-//        camera.update();
     }
 
     private void update() {
