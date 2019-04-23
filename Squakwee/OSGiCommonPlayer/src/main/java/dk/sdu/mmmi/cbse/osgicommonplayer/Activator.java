@@ -1,20 +1,18 @@
 package dk.sdu.mmmi.cbse.osgicommonplayer;
 
-import dk.sdu.mmmi.cbse.common.data.GameData;
-import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
 
-
-public class Activator implements IGamePluginService {
+public class Activator implements BundleActivator {
 
     @Override
-    public void start(GameData gameData, World world) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void start(BundleContext bc) throws Exception {
+        System.out.println("Common Start");
     }
 
     @Override
-    public void stop(GameData gameData, World world) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void stop(BundleContext bc) throws Exception {
+        System.out.println("common stop");
     }
 
 }

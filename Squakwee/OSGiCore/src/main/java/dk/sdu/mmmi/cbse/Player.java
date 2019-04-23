@@ -100,7 +100,9 @@ public class Player extends Sprite {
             // bottom middle
             if (!collisionY) {
                 collisionY = collisionLayer.getCell((int) ((getX() + getWidth()) / 2), (int) (getY() / tileHeight))
-                        .getTile().getProperties().containsKey("blocked");
+                        .getTile()
+                        .getProperties()
+                        .containsKey("blocked");
             }
             // bottom right
             if (!collisionY) {
