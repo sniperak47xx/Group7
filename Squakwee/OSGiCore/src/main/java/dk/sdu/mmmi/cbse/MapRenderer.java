@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dk.sdu.mmmi.cbse.osgimap;
+package dk.sdu.mmmi.cbse;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -15,7 +15,6 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import dk.sdu.mmmi.cbse.osgiplayer.Player;
 
 /**
  *
@@ -26,7 +25,7 @@ public class MapRenderer implements Screen {
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
     private OrthographicCamera camera;
-    private Player player;
+    private SpriteRenderer player;
 
     public MapRenderer() {
     }
@@ -34,13 +33,13 @@ public class MapRenderer implements Screen {
     @Override
     public void show() {
         TmxMapLoader loader = new TmxMapLoader();
-        map = loader.load("C:\\Users\\mehgn\\OneDrive\\Dokumenter\\NetBeansProjects\\Group7\\Squakwee\\OSGiMap\\src\\main\\java\\dk\\sdu\\mmmi\\cbse\\assets\\maps\\TileMap.tmx");
+        map = loader.load("D:\\Projekter\\Group7\\Squakwee\\OSGiMap\\src\\main\\java\\dk\\sdu\\mmmi\\cbse\\assets\\maps\\TileMap.tmx");
 //        map = loader.load("assets\\TileMap.tmx");
 
         renderer = new OrthogonalTiledMapRenderer(map);
 
         camera = new OrthographicCamera();
-        player = new Player(new Sprite(new Texture("C:\\Users\\mehgn\\OneDrive\\Dokumenter\\NetBeansProjects\\Group7\\Squakwee\\OSGiMap\\src\\main\\java\\dk\\sdu\\mmmi\\cbse\\assets\\img\\player.png")), (TiledMapTileLayer) map.getLayers().get(0));
+        player = new SpriteRenderer(new Sprite(new Texture("D:\\Projekter\\Group7\\Squakwee\\OSGiMap\\src\\main\\java\\dk\\sdu\\mmmi\\cbse\\assets\\img\\player.png")), (TiledMapTileLayer) map.getLayers().get(0));
         player.setPosition(5 * player.getCollisionLayer().getTileWidth(), 52 * player.getCollisionLayer().getTileHeight());
     }
 

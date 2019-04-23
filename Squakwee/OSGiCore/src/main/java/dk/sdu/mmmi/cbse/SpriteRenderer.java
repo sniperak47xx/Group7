@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.osgiplayer;
+package dk.sdu.mmmi.cbse;
 
 
 /*
@@ -16,7 +16,7 @@ import com.badlogic.gdx.math.Vector2;
  *
  * @author Borgar Bordoy
  */
-public class Player extends Sprite {
+public class SpriteRenderer extends Sprite {
 
     /**
      * The movement velocity
@@ -25,7 +25,7 @@ public class Player extends Sprite {
     private float speed = 60 * 2, gravity = 60 * 1.8f;
     private TiledMapTileLayer collisionLayer;
 
-    public Player(Sprite sprite, TiledMapTileLayer collisionLayer) {
+    public SpriteRenderer(Sprite sprite, TiledMapTileLayer collisionLayer) {
         super(sprite);
         this.collisionLayer = collisionLayer;
     }
