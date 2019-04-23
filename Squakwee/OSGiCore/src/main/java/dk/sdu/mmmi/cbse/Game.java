@@ -20,6 +20,7 @@ import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
 import dk.sdu.mmmi.cbse.core.managers.GameInputProcessor;
+import dk.sdu.mmmi.cbse.osgimap.TileGameMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.osgi.framework.BundleContext;
@@ -53,7 +54,6 @@ public class Game implements ApplicationListener {
         cfg.height = 600;
         cfg.useGL30 = false;
         cfg.resizable = false;
-
         new LwjglApplication(new TileGameMap(), cfg);
     }
 
@@ -80,7 +80,6 @@ public class Game implements ApplicationListener {
         // clear screen to black
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         gameData.setDelta(Gdx.graphics.getDeltaTime());
         gameData.getKeys().update();
 

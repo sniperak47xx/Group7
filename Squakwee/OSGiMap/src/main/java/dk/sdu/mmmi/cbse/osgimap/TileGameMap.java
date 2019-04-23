@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse;
+package dk.sdu.mmmi.cbse.osgimap;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;

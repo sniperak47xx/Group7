@@ -30,6 +30,12 @@
             <artifactId>OSGiCommonPlayer</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx</artifactId>
+            <version>1.9.6</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
@@ -42,7 +48,8 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>dk.sdu.mmmi.cbse.osgiplayer.Activator</Bundle-Activator>
-                        <Export-Package />
+                        <Export-Package>dk.sdu.mmmi.cbse.osgiplayer</Export-Package>
+                        <Private-Package>dk.sdu.mmmi.cbse.osgiplayer.*</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
